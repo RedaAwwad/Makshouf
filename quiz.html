@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مكشوف - اختبار نفسي احترافي لاكتشاف الذات</title>
+    <meta
+      name="description"
+      content="اكتشف أعماق شخصيتك من خلال اختبار نفسي احترافي مبني على نظريات علمية معتمدة. اختبار سريع ودقيق لتحليل الشخصية في 10 دقائق فقط."
+    />
+
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="./css/aos.css" rel="stylesheet" />
+
+    <!-- Preline UI -->
+    <script src="./js/preline.js"></script>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <header
+      class="bg-[#F3F4F8] fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100vw-1.5rem)] lg:w-[calc(100vw-2.5rem)] h-16 z-50 rounded-lg border-b border-gray-200"
+      role="banner"
+    >
+      <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="#" aria-label="الرئيسية - مكشوف">
+              <img
+                src="./assets/images/nav-logo.webp"
+                alt="شعار مكشوف"
+                class="h-8"
+                loading="eager"
+              />
+            </a>
+          </div>
+
+          <div class="hidden lg:block">
+            <ul class="me-10 flex items-baseline space-x-4" role="menubar">
+              <li role="none">
+                <a
+                  href="index.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  aria-current="page"
+                  >الرئيسية</a
+                >
+              </li>
+              <li role="none">
+                <a
+                  href="blog.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  >المدونة</a
+                >
+              </li>
+              <li role="none">
+                <a
+                  href="faq.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  >الأسئلة الشائعة</a
+                >
+              </li>
+              <li role="none">
+                <a
+                  href="contact.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="hidden lg:flex items-center gap-x-8">
+            <a
+              href="login.html"
+              class="font-bold focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 px-3 py-2 rounded-md transition-colors"
+              aria-label="تسجيل الدخول إلى حسابك"
+            >
+              تسجيل الدخول
+            </a>
+            <button
+              class="btn-primary rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all"
+              aria-label="ابدأ الاختبار النفسي الآن"
+            >
+              ابدأ الاختبار الآن
+            </button>
+          </div>
+
+          <div class="lg:hidden">
+            <button
+              type="button"
+              class="hs-collapse-toggle bg-white p-2 inline-flex items-center justify-center rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors"
+              data-hs-collapse="#navbar-collapse-with-animation"
+              aria-expanded="false"
+              aria-controls="navbar-collapse-with-animation"
+              aria-label="فتح قائمة التنقل"
+            >
+              <span class="sr-only">فتح القائمة</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div
+          class="hs-collapse hidden overflow-hidden transition-[height] duration-300 bg-white w-full lg:hidden z-50"
+          id="navbar-collapse-with-animation"
+          role="region"
+          aria-labelledby="mobile-menu-button"
+        >
+          <nav
+            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 opacity-0 translate-y-2 hs-collapse-open:opacity-100 hs-collapse-open:translate-y-0 transition-[opacity,transform] duration-300"
+            role="navigation"
+            aria-label="القائمة المتحركة"
+          >
+            <ul class="space-y-1">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-900 hover:text-primary block px-3 py-2 rounded-md text-base font-ping-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-current="page"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >المدونة</a
+                >
+              </li>
+              <li>
+                <a
+                  href="faq.html"
+                  class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >الأسئلة الشائعة</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+
+            <!-- Mobile buttons -->
+            <div class="pt-4 pb-3 border-t border-gray-200">
+              <a
+                href="login.html"
+                class="w-full text-center block bg-white font-bold px-3 py-2 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="تسجيل الدخول إلى حسابك"
+              >
+                تسجيل الدخول
+              </a>
+              <button
+                class="w-full btn-primary px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="ابدأ الاختبار النفسي الآن"
+              >
+                ابدأ الاختبار الآن
+              </button>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content - Quiz Section -->
+    <main class="min-h-screen bg-gray-50 py-32">
+      <div class="container">
+        <!-- Progress Section -->
+        <div class="mb-8">
+          <h2 class="mb-2">السؤال 6 من 25</h2>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-primary h-2 rounded-full" style="width: 24%"></div>
+          </div>
+
+          <button class="flex items-center gap-2 my-10 lg:my-20">
+            <svg
+              width="34"
+              height="16"
+              viewBox="0 0 34 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32.7315 8.96663C33.122 8.5761 33.122 7.94294 32.7315 7.55241L26.3676 1.18845C25.977 0.797929 25.3439 0.797929 24.9533 1.18845C24.5628 1.57898 24.5628 2.21214 24.9533 2.60267L30.6102 8.25952L24.9533 13.9164C24.5628 14.3069 24.5628 14.9401 24.9533 15.3306C25.3439 15.7211 25.977 15.7211 26.3676 15.3306L32.7315 8.96663ZM0.0244141 8.25952L0.0244141 9.25952L32.0244 9.25952V8.25952V7.25952L0.0244141 7.25952L0.0244141 8.25952Z"
+                fill="black"
+              />
+            </svg>
+            السابق
+          </button>
+        </div>
+
+        <!-- Question Card -->
+        <div>
+          <!-- Question Text -->
+          <div class="text-center mb-8">
+            <h3 class="text-2xl lg:text-4xl font-bold leading-relaxed">
+              أقوم بإنهاء المهام في الوقت المحدد دون مماطلة.
+            </h3>
+          </div>
+
+          <!-- Answer Options -->
+          <div class="mb-8">
+            <div
+              class="flex flex-wrap justify-center items-center gap-4 max-w-xl mx-auto"
+            >
+              <!-- Strongly Agree -->
+              <div class="text-center">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="strongly-agree"
+                  class="sr-only"
+                />
+                <label for="strongly-agree" class="cursor-pointer">
+                  <div
+                    class="size-12 lg:size-16 bg-[#A2EEA8] border-2 border-[#4BB453] rounded-full mx-auto mb-2 flex items-center justify-center"
+                  >
+                    <div
+                      class="size-6 lg:size-8 bg-black rounded-full radio-dot"
+                    ></div>
+                  </div>
+                  <span class="text-sm font-bold">موافق تماما</span>
+                </label>
+              </div>
+
+              <!-- Agree to some extent -->
+              <div class="text-center">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="agree-some"
+                  class="sr-only"
+                />
+                <label for="agree-some" class="cursor-pointer">
+                  <div
+                    class="size-12 lg:size-16 bg-[#D3F3D5] border-2 border-[#93DD97] rounded-full mx-auto mb-2 flex items-center justify-center"
+                  >
+                    <div
+                      class="size-6 lg:size-8 bg-black rounded-full radio-dot"
+                    ></div>
+                  </div>
+                  <span class="text-sm font-bold">موافق إلى حد ما</span>
+                </label>
+              </div>
+
+              <!-- Neutral -->
+              <div class="text-center">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="neutral"
+                  class="sr-only"
+                />
+                <label for="neutral" class="cursor-pointer">
+                  <div
+                    class="size-12 lg:size-16 bg-[#F8FAFE] border-2 border-[#B7C4DF] rounded-full mx-auto mb-2 flex items-center justify-center"
+                  >
+                    <div
+                      class="size-6 lg:size-8 bg-black rounded-full radio-dot"
+                    ></div>
+                  </div>
+                  <span class="text-sm font-bold">محايد</span>
+                </label>
+              </div>
+
+              <!-- Disagree to some extent -->
+              <div class="text-center">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="disagree-some"
+                  class="sr-only"
+                />
+                <label for="disagree-some" class="cursor-pointer">
+                  <div
+                    class="size-12 lg:size-16 bg-[#FCE0E1] border-2 border-[#E5A3A5] rounded-full mx-auto mb-2 flex items-center justify-center"
+                  >
+                    <div
+                      class="size-6 lg:size-8 bg-black rounded-full radio-dot"
+                    ></div>
+                  </div>
+                  <span class="text-sm font-bold">غير موافق إلى حد ما</span>
+                </label>
+              </div>
+              <!-- Strongly Disagree -->
+              <div class="text-center">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="strongly-disagree"
+                  class="sr-only"
+                />
+                <label for="strongly-disagree" class="cursor-pointer">
+                  <div
+                    class="w-16 h-16 bg-[#FCB1B2] border-2 border-[#BF4F50] rounded-full mx-auto mb-2 flex items-center justify-center"
+                  >
+                    <div class="w-8 h-8 bg-black rounded-full radio-dot"></div>
+                  </div>
+                  <span class="text-sm font-bold">غير موافق تماما</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Button -->
+          <div class="text-center mt-14">
+            <button
+              class="btn bg-secondary text-black px-8 py-3 rounded-lg transition-colors flex items-center mx-auto space-x-2 space-x-reverse"
+            >
+              <span>السؤال التالي</span
+              ><svg
+                width="18"
+                height="16"
+                viewBox="0 0 18 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.317306 7.25212C-0.0732174 7.64265 -0.0732174 8.27581 0.317307 8.66634L6.68127 15.0303C7.07179 15.4208 7.70496 15.4208 8.09548 15.0303C8.48601 14.6398 8.48601 14.0066 8.09548 13.6161L2.43863 7.95923L8.09548 2.30238C8.48601 1.91185 8.48601 1.27869 8.09548 0.888161C7.70496 0.497637 7.07179 0.497637 6.68127 0.888162L0.317306 7.25212ZM17.0244 7.95923L17.0244 6.95923L1.02441 6.95923L1.02441 7.95923L1.02441 8.95923L17.0244 8.95923L17.0244 7.95923Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Save Progress Link -->
+        <div class="text-end mt-10 lg:mt-20">
+          <a href="#" class="underline"> احفظ تقدمي وارجع لاحقا </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

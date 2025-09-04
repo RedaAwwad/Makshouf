@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مكشوف - اختبار نفسي احترافي لاكتشاف الذات</title>
+    <meta
+      name="description"
+      content="اكتشف أعماق شخصيتك من خلال اختبار نفسي احترافي مبني على نظريات علمية معتمدة. اختبار سريع ودقيق لتحليل الشخصية في 10 دقائق فقط."
+    />
+
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="./css/aos.css" rel="stylesheet" />
+
+    <!-- Preline UI -->
+    <script src="./js/preline.js"></script>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <header
+      class="bg-[#F3F4F8] fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100vw-1.5rem)] lg:w-[calc(100vw-2.5rem)] h-16 z-50 rounded-lg border-b border-gray-200"
+      role="banner"
+    >
+      <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="#" aria-label="الرئيسية - مكشوف">
+              <img
+                src="./assets/images/nav-logo.webp"
+                alt="شعار مكشوف"
+                class="h-8"
+                loading="eager"
+              />
+            </a>
+          </div>
+
+          <div class="hidden lg:block">
+            <ul class="me-10 flex items-baseline space-x-4" role="menubar">
+              <li role="none">
+                <a
+                  href="index.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  aria-current="page"
+                  >الرئيسية</a
+                >
+              </li>
+              <li role="none">
+                <a
+                  href="blog.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  >المدونة</a
+                >
+              </li>
+              <li role="none">
+                <a
+                  href="faq.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  >الأسئلة الشائعة</a
+                >
+              </li>
+              <li role="none">
+                <a
+                  href="contact.html"
+                  class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  role="menuitem"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="hidden lg:flex items-center gap-x-8">
+            <a
+              href="login.html"
+              class="font-bold focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 px-3 py-2 rounded-md transition-colors"
+              aria-label="تسجيل الدخول إلى حسابك"
+            >
+              تسجيل الدخول
+            </a>
+            <button
+              class="btn-primary rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all"
+              aria-label="ابدأ الاختبار النفسي الآن"
+            >
+              ابدأ الاختبار الآن
+            </button>
+          </div>
+
+          <div class="lg:hidden">
+            <button
+              type="button"
+              class="hs-collapse-toggle bg-white p-2 inline-flex items-center justify-center rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors"
+              data-hs-collapse="#navbar-collapse-with-animation"
+              aria-expanded="false"
+              aria-controls="navbar-collapse-with-animation"
+              aria-label="فتح قائمة التنقل"
+            >
+              <span class="sr-only">فتح القائمة</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div
+          class="hs-collapse hidden overflow-hidden transition-[height] duration-300 bg-white w-full lg:hidden z-50"
+          id="navbar-collapse-with-animation"
+          role="region"
+          aria-labelledby="mobile-menu-button"
+        >
+          <nav
+            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 opacity-0 translate-y-2 hs-collapse-open:opacity-100 hs-collapse-open:translate-y-0 transition-[opacity,transform] duration-300"
+            role="navigation"
+            aria-label="القائمة المتحركة"
+          >
+            <ul class="space-y-1">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-900 hover:text-primary block px-3 py-2 rounded-md text-base font-ping-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-current="page"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >المدونة</a
+                >
+              </li>
+              <li>
+                <a
+                  href="faq.html"
+                  class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >الأسئلة الشائعة</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+
+            <!-- Mobile buttons -->
+            <div class="pt-4 pb-3 border-t border-gray-200">
+              <a
+                href="login.html"
+                class="w-full text-center block bg-white font-bold text-black px-3 py-2 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="تسجيل الدخول إلى حسابك"
+              >
+                تسجيل الدخول
+              </a>
+              <button
+                class="w-full btn-primary px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="ابدأ الاختبار النفسي الآن"
+              >
+                ابدأ الاختبار الآن
+              </button>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content - Payment Section -->
+    <main class="min-h-screen py-32">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-6">
+          <!-- Left Side -->
+          <div>
+            <h1 class="text-3xl font-bold mb-6">
+              احصل على تحليل نفسي مفصّل ودقيق
+            </h1>
+            <div class="rounded-lg overflow-hidden h-96 lg:h-[500px]">
+              <img
+                src="./assets/images/payment-img.webp"
+                alt="payment-img"
+                class="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+
+            <h2 class="text-2xl font-bold mt-8 mb-1">ماذا ستحصل بعد الدفع؟</h2>
+
+            <ul class="list-none space-y-2">
+              <li class="flex items-center gap-x-2">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.2666 6.10791L9.2666 17.1079L4.2666 12.1079"
+                    stroke="#DEACFF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>تقرير مفصل عن شخصيتك مبني على نموذج علمي</p>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.2666 6.10791L9.2666 17.1079L4.2666 12.1079"
+                    stroke="#DEACFF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>تحليل بصري (رسوم بيانية – نسب – مقارنة)</p>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.2666 6.10791L9.2666 17.1079L4.2666 12.1079"
+                    stroke="#DEACFF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>توصيات وتوجيهات تناسب نمطك النفسي</p>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.2666 6.10791L9.2666 17.1079L4.2666 12.1079"
+                    stroke="#DEACFF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>إمكانية تحميل التقرير بصيغة PDF</p>
+              </li>
+
+              <li class="flex items-center gap-x-2">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.2666 6.10791L9.2666 17.1079L4.2666 12.1079"
+                    stroke="#DEACFF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>حفظ النتائج والرجوع إليها من لوحة التحكم</p>
+              </li>
+              <li class="flex items-center gap-x-2">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.2666 6.10791L9.2666 17.1079L4.2666 12.1079"
+                    stroke="#DEACFF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>إمكانية إعادة الاختبار لاحقًا مجانًا</p>
+              </li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-14 mb-1">الخصوصية والأمان</h2>
+
+            <p>
+              نحن نستخدم أعلى معايير الأمان لحماية بياناتك.لا يتم حفظ معلومات
+              بطاقتك في أي وقت.يمكنك طلب استرداد المبلغ خلال 3 أيام في حال لم
+              تكن راضيًا.
+            </p>
+          </div>
+
+          <!-- Right Side -->
+          <div class="mt-16">
+            <div class="flex w-full">
+              <div
+                class="flex bg-gray-100 hover:bg-gray-200 rounded-lg transition p-1 w-full"
+              >
+                <nav
+                  class="flex gap-x-1 w-full"
+                  aria-label="Tabs"
+                  role="tablist"
+                  aria-orientation="horizontal"
+                >
+                  <button
+                    type="button"
+                    class="active hs-tab-active:bg-white hs-tab-active:border-2 hs-tab-active:border-primary/70 py-3 px-4 inline-flex justify-center items-center gap-x-2 bg-transparent text-sm font-medium rounded-lg disabled:opacity-50 disabled:pointer-events-none w-full"
+                    id="pay-with-bank-item-1"
+                    aria-selected="true"
+                    data-hs-tab="#pay-with-bank-1"
+                    aria-controls="pay-with-bank-1"
+                    role="tab"
+                  >
+                    ادفع عن طريق البنك
+                  </button>
+                  <button
+                    type="button"
+                    class="hs-tab-active:bg-white hs-tab-active:border hs-tab-active:border-primary/70 py-3 px-4 inline-flex justify-center items-center gap-x-2 bg-transparent text-sm font-medium rounded-lg disabled:opacity-50 disabled:pointer-events-none w-full"
+                    id="paypal-item-2"
+                    aria-selected="false"
+                    data-hs-tab="#paypal-2"
+                    aria-controls="paypal-2"
+                    role="tab"
+                  >
+                    Paypal
+                  </button>
+                </nav>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <div
+                id="pay-with-bank-1"
+                role="tabpanel"
+                aria-labelledby="pay-with-bank-item-1"
+              >
+                <!-- Payment Form -->
+                <form class="space-y-6">
+                  <!-- Email Input -->
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium mb-2 text-right"
+                    >
+                      البريد الإلكتروني
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                      placeholder="أدخل بريدك الإلكتروني"
+                      required
+                    />
+                  </div>
+
+                  <!-- Payment Method Selection -->
+                  <div>
+                    <label class="block text-sm font-medium mb-3 text-right">
+                      طريقة الدفع
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <button
+                        type="button"
+                        class="payment-method-btn p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors text-center"
+                        data-method="bank-card"
+                      >
+                        <div class="text-lg font-semibold">البطاقة البنكية</div>
+                      </button>
+                      <button
+                        type="button"
+                        class="payment-method-btn p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors text-center"
+                        data-method="mada"
+                      >
+                        <div class="text-lg font-semibold">مدى</div>
+                      </button>
+                      <button
+                        type="button"
+                        class="payment-method-btn p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors text-center"
+                        data-method="apple-pay"
+                      >
+                        <div class="text-lg font-semibold">Apple Pay</div>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Card Details Section -->
+                  <div class="space-y-4">
+                    <!-- Card Number -->
+                    <div>
+                      <label
+                        for="card-number"
+                        class="block text-sm font-medium mb-2 text-right"
+                      >
+                        رقم البطاقة
+                      </label>
+                      <input
+                        type="text"
+                        id="card-number"
+                        name="card-number"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                        placeholder="0122 0222 0448 3888"
+                        maxlength="19"
+                        required
+                      />
+                    </div>
+
+                    <!-- Expiry and CVC Row -->
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          for="expiry"
+                          class="block text-sm font-medium mb-2 text-right"
+                        >
+                          تاريخ الانتهاء
+                        </label>
+                        <input
+                          type="text"
+                          id="expiry"
+                          name="expiry"
+                          class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-center"
+                          placeholder="MM/DD"
+                          maxlength="5"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label
+                          for="cvc"
+                          class="block text-sm font-medium mb-2 text-right"
+                        >
+                          الرمز السري
+                        </label>
+                        <input
+                          type="text"
+                          id="cvc"
+                          name="cvc"
+                          class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-center"
+                          placeholder="CVC"
+                          maxlength="4"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Cardholder Name -->
+                    <div>
+                      <label
+                        for="cardholder-name"
+                        class="block text-sm font-medium mb-2 text-right"
+                      >
+                        اسم صاحب البطاقة
+                      </label>
+                      <input
+                        type="text"
+                        id="cardholder-name"
+                        name="cardholder-name"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                        placeholder="اسم صاحب البطاقة"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Billing Address and Discount -->
+                  <div class="space-y-4">
+                    <div>
+                      <label
+                        for="billing-address"
+                        class="block text-sm font-medium mb-2 text-right"
+                      >
+                        عنوان الفاتورة
+                      </label>
+                      <input
+                        type="text"
+                        id="billing-address"
+                        name="billing-address"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                        placeholder="عنوان الفاتورة"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="discount-code"
+                        class="block text-sm font-medium mb-2 text-right"
+                      >
+                        كود الخصم
+                      </label>
+                      <input
+                        type="text"
+                        id="discount-code"
+                        name="discount-code"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                        placeholder="كود الخصم"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Order Summary -->
+                  <div class="p-4 rounded-lg space-y-3">
+                    <div class="flex justify-between items-center">
+                      <span class="text-start">المجموع الفرعي</span>
+                      <span class="font-semibold text-lg">$99.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-start">المبلغ النهائي</span>
+                      <span class="font-bold text-xl">$99.00</span>
+                    </div>
+                  </div>
+
+                  <!-- Pay Button -->
+                  <button
+                    type="submit"
+                    class="w-full bg-primary hover:bg-primary/90 text-black font-bold py-4 px-6 rounded-lg text-lg transition-colors"
+                  >
+                    ادفع $99.00
+                  </button>
+                </form>
+              </div>
+              <div
+                id="paypal-2"
+                class="hidden"
+                role="tabpanel"
+                aria-labelledby="paypal-item-2"
+              >
+                <!-- PayPal Payment Form -->
+                <div class="space-y-6">
+                  <!-- PayPal Info Section -->
+                  <div
+                    class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center"
+                  >
+                    <div class="mb-4">
+                      <svg
+                        class="w-16 h-16 mx-auto text-blue-600"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M20.067 8.478c.492.315.844.825.844 1.478 0 .653-.352 1.163-.844 1.478-.492.315-1.163.478-1.844.478H5.777c-.681 0-1.352-.163-1.844-.478C3.441 12.641 3.089 12.131 3.089 11.478c0-.653.352-1.163.844-1.478.492-.315 1.163-.478 1.844-.478h12.446c.681 0 1.352.163 1.844.478z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">PayPal</h3>
+                    <p class="text-blue-700 text-sm">
+                      Pay securely with your PayPal account
+                    </p>
+                  </div>
+
+                  <!-- Email Input -->
+                  <div>
+                    <label
+                      for="paypal-email"
+                      class="block text-sm font-medium mb-2 text-right"
+                    >
+                      البريد الإلكتروني
+                    </label>
+                    <input
+                      type="email"
+                      id="paypal-email"
+                      name="paypal-email"
+                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                      placeholder="أدخل بريدك الإلكتروني"
+                      required
+                    />
+                  </div>
+
+                  <!-- PayPal Account Options -->
+                  <div class="space-y-4">
+                    <div class="flex items-center space-x-3 space-x-reverse">
+                      <input
+                        type="radio"
+                        id="paypal-existing"
+                        name="paypal-option"
+                        value="existing"
+                        class="w-4 h-4 text-primary border-gray-300 focus:border-primary outline-none"
+                        checked
+                      />
+                      <label for="paypal-existing" class="text-sm font-medium">
+                        لدي حساب PayPal
+                      </label>
+                    </div>
+                    <div class="flex items-center space-x-3 space-x-reverse">
+                      <input
+                        type="radio"
+                        id="paypal-guest"
+                        name="paypal-option"
+                        value="guest"
+                        class="w-4 h-4 text-primary border-gray-300 focus:ring-primary"
+                      />
+                      <label for="paypal-guest" class="text-sm font-medium">
+                        الدفع كضيف (Guest Checkout)
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Guest Checkout Fields (initially hidden) -->
+                  <div id="guest-fields" class="hidden space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          for="guest-first-name"
+                          class="block text-sm font-medium mb-2 text-right"
+                        >
+                          الاسم الأول
+                        </label>
+                        <input
+                          type="text"
+                          id="guest-first-name"
+                          name="guest-first-name"
+                          class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                          placeholder="الاسم الأول"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          for="guest-last-name"
+                          class="block text-sm font-medium mb-2 text-right"
+                        >
+                          اسم العائلة
+                        </label>
+                        <input
+                          type="text"
+                          id="guest-last-name"
+                          name="guest-last-name"
+                          class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                          placeholder="اسم العائلة"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label
+                        for="guest-phone"
+                        class="block text-sm font-medium mb-2 text-right"
+                      >
+                        رقم الهاتف
+                      </label>
+                      <input
+                        type="tel"
+                        id="guest-phone"
+                        name="guest-phone"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                        placeholder="+966 50 123 4567"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Billing Address -->
+                  <div>
+                    <label
+                      for="paypal-billing-address"
+                      class="block text-sm font-medium mb-2 text-right"
+                    >
+                      عنوان الفاتورة
+                    </label>
+                    <input
+                      type="text"
+                      id="paypal-billing-address"
+                      name="paypal-billing-address"
+                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                      placeholder="عنوان الفاتورة"
+                      required
+                    />
+                  </div>
+
+                  <!-- Discount Code -->
+                  <div>
+                    <label
+                      for="paypal-discount-code"
+                      class="block text-sm font-medium mb-2 text-right"
+                    >
+                      كود الخصم
+                    </label>
+                    <input
+                      type="text"
+                      id="paypal-discount-code"
+                      name="paypal-discount-code"
+                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary/70 outline-none text-right"
+                      placeholder="كود الخصم"
+                    />
+                  </div>
+
+                  <!-- Order Summary -->
+                  <div class="p-4 rounded-lg space-y-3">
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600 text-right"
+                        >المجموع الفرعي</span
+                      >
+                      <span class="font-semibold text-lg">$99.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600 text-right"
+                        >المبلغ النهائي</span
+                      >
+                      <span class="font-bold text-xl text-primary">$99.00</span>
+                    </div>
+                  </div>
+
+                  <!-- PayPal Pay Button -->
+                  <button
+                    type="button"
+                    id="paypal-pay-btn"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors flex items-center justify-center space-x-2 space-x-reverse"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.067 8.478c.492.315.844.825.844 1.478 0 .653-.352 1.163-.844 1.478-.492.315-1.163.478-1.844.478H5.777c-.681 0-1.352-.163-1.844-.478C3.441 12.641 3.089 12.131 3.089 11.478c0-.653.352-1.163.844-1.478.492-.315 1.163-.478 1.844-.478h12.446c.681 0 1.352.163 1.844.478z"
+                      />
+                    </svg>
+                    <span>ادفع مع PayPal $99.00</span>
+                  </button>
+
+                  <!-- PayPal Security Notice -->
+                  <div class="text-center text-sm text-gray-500">
+                    <p>🔒 جميع المدفوعات محمية بواسطة PayPal</p>
+                    <p class="mt-1">سيتم توجيهك إلى PayPal لإكمال الدفع</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+
+    <!-- Payment Form JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Payment method selection
+        const paymentMethodBtns = document.querySelectorAll(
+          ".payment-method-btn"
+        );
+        const cardDetailsSection = document.querySelector(".space-y-4");
+
+        paymentMethodBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active state from all buttons
+            paymentMethodBtns.forEach((b) => {
+              b.classList.remove("border-primary", "bg-primary/10");
+              b.classList.add("border-gray-200");
+            });
+
+            // Add active state to clicked button
+            this.classList.remove("border-gray-200");
+            this.classList.add("border-primary", "bg-primary/10");
+
+            // Show/hide card details based on selection
+            const method = this.dataset.method;
+            if (method === "bank-card") {
+              cardDetailsSection.style.display = "block";
+            } else {
+              cardDetailsSection.style.display = "none";
+            }
+          });
+        });
+
+        // Card number formatting
+        const cardNumberInput = document.getElementById("card-number");
+        cardNumberInput.addEventListener("input", function (e) {
+          let value = e.target.value.replace(/\s/g, "");
+          value = value.replace(/\D/g, "");
+          value = value.replace(/(\d{4})/g, "$1 ").trim();
+          e.target.value = value;
+        });
+
+        // Expiry date formatting
+        const expiryInput = document.getElementById("expiry");
+        expiryInput.addEventListener("input", function (e) {
+          let value = e.target.value.replace(/\D/g, "");
+          if (value.length >= 2) {
+            value = value.slice(0, 2) + "/" + value.slice(2);
+          }
+          e.target.value = value;
+        });
+
+        // CVC validation
+        const cvcInput = document.getElementById("cvc");
+        cvcInput.addEventListener("input", function (e) {
+          e.target.value = e.target.value.replace(/\D/g, "");
+        });
+
+        // Form submission
+        const paymentForm = document.querySelector("form");
+        paymentForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Basic validation
+          const email = document.getElementById("email").value;
+          const cardNumber = document.getElementById("card-number").value;
+          const expiry = document.getElementById("expiry").value;
+          const cvc = document.getElementById("cvc").value;
+          const cardholderName =
+            document.getElementById("cardholder-name").value;
+          const billingAddress =
+            document.getElementById("billing-address").value;
+
+          if (
+            !email ||
+            !cardNumber ||
+            !expiry ||
+            !cvc ||
+            !cardholderName ||
+            !billingAddress
+          ) {
+            alert("يرجى ملء جميع الحقول المطلوبة");
+            return;
+          }
+
+          // Here you would typically send the data to your payment processor
+          alert("جاري معالجة الدفع...");
+        });
+
+        // Set default active payment method
+        document.querySelector('[data-method="bank-card"]').click();
+
+        // PayPal form functionality
+        const paypalExistingRadio = document.getElementById("paypal-existing");
+        const paypalGuestRadio = document.getElementById("paypal-guest");
+        const guestFields = document.getElementById("guest-fields");
+        const paypalPayBtn = document.getElementById("paypal-pay-btn");
+
+        // Show/hide guest fields based on radio selection
+        paypalExistingRadio.addEventListener("change", function () {
+          if (this.checked) {
+            guestFields.classList.add("hidden");
+          }
+        });
+
+        paypalGuestRadio.addEventListener("change", function () {
+          if (this.checked) {
+            guestFields.classList.remove("hidden");
+          }
+        });
+
+        // PayPal payment button click
+        paypalPayBtn.addEventListener("click", function () {
+          const email = document.getElementById("paypal-email").value;
+          const billingAddress = document.getElementById(
+            "paypal-billing-address"
+          ).value;
+
+          if (!email || !billingAddress) {
+            alert("يرجى ملء جميع الحقول المطلوبة");
+            return;
+          }
+
+          if (paypalGuestRadio.checked) {
+            const firstName = document.getElementById("guest-first-name").value;
+            const lastName = document.getElementById("guest-last-name").value;
+            const phone = document.getElementById("guest-phone").value;
+
+            if (!firstName || !lastName || !phone) {
+              alert("يرجى ملء جميع حقول الضيف");
+              return;
+            }
+          }
+
+          // Here you would typically redirect to PayPal or open PayPal modal
+          alert("جاري التوجيه إلى PayPal...");
+        });
+      });
+    </script>
+  </body>
+</html>
