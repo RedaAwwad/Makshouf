@@ -1,3 +1,7 @@
+@php
+    $settings = \App\Models\Setting::first();
+@endphp
+
     <footer class="bg-black text-white pt-28 pb-16 mt-auto">
       <div class="container mx-auto px-4">
         <div
@@ -16,7 +20,7 @@
               <div class="flex justify-center lg:justify-start mt-10 lg:mt-20">
                 <div class="flex gap-4">
                   <a
-                    href="#"
+                    href="{{ $settings->linkedin }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -30,7 +34,7 @@
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="{{ $settings->pinterest }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -44,7 +48,7 @@
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="{{ $settings->x }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -58,7 +62,7 @@
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="{{ $settings->facebook }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -72,7 +76,7 @@
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="{{ $settings->youtube }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -163,11 +167,11 @@
                     ></path>
                   </svg>
                   <a
-                    href="mailto:support@example.com"
+                    href="mailto:{{ $settings->email }}"
                     class="text-gray-300"
-                    target="_blank"
-                    >support@example.com</a
-                  >
+                    target="_blank">
+                    {{ $settings->email }}
+                   </a>
                 </div>
                 <div
                   class="flex items-center justify-center lg:justify-start gap-3"
@@ -186,11 +190,11 @@
                     ></path>
                   </svg>
                   <a
-                    href="tel:+966 XXXXXXXX"
+                    href="tel:{{ $settings->phone }}"
                     class="text-gray-300"
-                    target="_blank"
-                    >+966 XXXXXXXX</a
-                  >
+                    target="_blank">
+                    {{ $settings->phone }}
+                  </a>
                 </div>
                 <div
                   class="flex items-center justify-center lg:justify-start gap-3"
@@ -217,9 +221,9 @@
                   <a
                     href="https://maps.app.goo.gl/YtPnN4PnxLsp4NhS8"
                     target="_blank"
-                    class="text-gray-300"
-                    >الرياض، المملكة العربية السعودية - حي النرجس</a
-                  >
+                    class="text-gray-300">
+                    {{ $settings->address }}
+                  </a>
                 </div>
               </div>
             </div>
@@ -231,7 +235,7 @@
         <!-- Large Logo Section -->
         <div class="text-center mb-8">
           <img
-            src="{{ asset('images/frontend/nav-logo.webp') }}"
+            src="{{ $settings->logo ? asset('storage/' . $settings->logo) : asset('images/frontend/nav-logo.webp') }}"
             alt="logo"
             class="w-1/2 mx-auto"
             loading="lazy"
@@ -240,7 +244,7 @@
 
         <!-- Copyright -->
         <div class="text-center">
-          <p class="text-gray-400 text-sm">مكشوف {{ date('Y') }} - جميع الحقوق محفوظة</p>
+          <p class="text-gray-400 text-sm">{{ $settings->website_name }} {{ date('Y') }} - جميع الحقوق محفوظة</p>
         </div>
       </div>
     </footer>

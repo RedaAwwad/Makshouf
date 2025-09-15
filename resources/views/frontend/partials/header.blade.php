@@ -1,3 +1,7 @@
+@php
+    $settings = \App\Models\Setting::first();
+@endphp
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth overflow-x-hidden">
   <head>
@@ -9,7 +13,7 @@
       content="اكتشف أعماق شخصيتك من خلال اختبار نفسي احترافي مبني على نظريات علمية معتمدة. اختبار سريع ودقيق لتحليل الشخصية في 10 دقائق فقط."
     />
 
-    <link rel="icon" type="image/png" href="{{ asset('images/app/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ $settings->favicon ? asset('storage/' . $settings->favicon) : asset('images/app/favicon.ico') }}">
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="{{ asset('css/frontend/output.css') }}" />
@@ -33,7 +37,7 @@
           <div class="flex items-center">
             <a href="{{ route('frontend.home') }}" aria-label="الرئيسية - مكشوف">
               <img
-                src="{{ asset('images/frontend/nav-logo.webp') }}"
+                src="{{ $settings->logo ? asset('storage/' . $settings->logo) : asset('images/frontend/nav-logo.webp') }}"
                 alt="شعار مكشوف"
                 class="h-8"
                 loading="eager"
