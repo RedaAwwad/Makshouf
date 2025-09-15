@@ -20,7 +20,7 @@
               <div class="flex justify-center lg:justify-start mt-10 lg:mt-20">
                 <div class="flex gap-4">
                   <a
-                    href="{{ $settings->linkedin }}"
+                    href="{{ $settings?->linkedin }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -34,7 +34,7 @@
                     </svg>
                   </a>
                   <a
-                    href="{{ $settings->pinterest }}"
+                    href="{{ $settings?->pinterest }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -48,7 +48,7 @@
                     </svg>
                   </a>
                   <a
-                    href="{{ $settings->x }}"
+                    href="{{ $settings?->x }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -62,7 +62,7 @@
                     </svg>
                   </a>
                   <a
-                    href="{{ $settings->facebook }}"
+                    href="{{ $settings?->facebook }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -76,7 +76,7 @@
                     </svg>
                   </a>
                   <a
-                    href="{{ $settings->youtube }}"
+                    href="{{ $settings?->youtube }}"
                     class="w-10 h-10 bg-[#1F1F1F] hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors"
                   >
                     <svg
@@ -167,10 +167,10 @@
                     ></path>
                   </svg>
                   <a
-                    href="mailto:{{ $settings->email }}"
+                    href="mailto:{{ $settings?->email }}"
                     class="text-gray-300"
                     target="_blank">
-                    {{ $settings->email }}
+                    {{ $settings?->email }}
                    </a>
                 </div>
                 <div
@@ -190,10 +190,10 @@
                     ></path>
                   </svg>
                   <a
-                    href="tel:{{ $settings->phone }}"
+                    href="tel:{{ $settings?->phone }}"
                     class="text-gray-300"
                     target="_blank">
-                    {{ $settings->phone }}
+                    {{ $settings?->phone }}
                   </a>
                 </div>
                 <div
@@ -222,7 +222,7 @@
                     href="https://maps.app.goo.gl/YtPnN4PnxLsp4NhS8"
                     target="_blank"
                     class="text-gray-300">
-                    {{ $settings->address }}
+                    {{ $settings?->address }}
                   </a>
                 </div>
               </div>
@@ -235,7 +235,7 @@
         <!-- Large Logo Section -->
         <div class="text-center mb-8">
           <img
-            src="{{ $settings->logo ? asset('storage/' . $settings->logo) : asset('images/frontend/nav-logo.webp') }}"
+            src="{{ $settings?->logo ? asset('storage/' . $settings?->logo) : asset('images/frontend/nav-logo.webp') }}"
             alt="logo"
             class="w-1/2 mx-auto"
             loading="lazy"
@@ -244,7 +244,7 @@
 
         <!-- Copyright -->
         <div class="text-center">
-          <p class="text-gray-400 text-sm">{{ $settings->website_name }} {{ date('Y') }} - جميع الحقوق محفوظة</p>
+          <p class="text-gray-400 text-sm">{{ $settings?->website_name }} {{ date('Y') }} - جميع الحقوق محفوظة</p>
         </div>
       </div>
     </footer>
