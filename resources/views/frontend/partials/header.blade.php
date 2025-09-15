@@ -74,7 +74,7 @@
               </li>
               <li role="none">
                 <a
-                  href="{{ route('frontend.contact') }}"
+                  href="{{ route('frontend.contact.index') }}"
                   class="font-bold hover:text-primary px-3 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   role="menuitem"
                   >تواصل معنا</a
@@ -157,7 +157,7 @@
             <ul class="space-y-1">
               <li>
                 <a
-                  href="index.html"
+                  href="{{ route('frontend.home') }}"
                   class="text-gray-900 hover:text-primary block px-3 py-2 rounded-md text-base font-ping-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   aria-current="page"
                   >الرئيسية</a
@@ -165,21 +165,21 @@
               </li>
               <li>
                 <a
-                  href="blog.html"
+                  href="{{ route('frontend.blog.index') }}"
                   class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   >المدونة</a
                 >
               </li>
               <li>
                 <a
-                  href="faq.html"
+                  href="{{ route('frontend.faq') }}"
                   class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   >الأسئلة الشائعة</a
                 >
               </li>
               <li>
                 <a
-                  href="contact.html"
+                  href="{{ route('frontend.contact.index') }}"
                   class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   >تواصل معنا</a
                 >
@@ -188,19 +188,20 @@
 
             <!-- Mobile buttons -->
             <div class="pt-4 pb-3 border-t border-gray-200">
-              <a
-                href="login.html"
-                class="w-full text-center block bg-white font-bold text-black px-3 py-2 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                aria-label="تسجيل الدخول إلى حسابك"
-              >
-                تسجيل الدخول
-              </a>
-              <button
-                class="w-full btn-primary px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                aria-label="ابدأ الاختبار النفسي الآن"
-              >
-                ابدأ الاختبار الآن
-              </button>
+                <a
+                    href="{{ route('login') }}"
+                    class="w-full text-center block bg-white font-bold text-black px-3 py-2 rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    aria-label="تسجيل الدخول إلى حسابك"
+                >
+                    تسجيل الدخول
+                </a>
+                <a
+                    href="{{ route('frontend.tests.take') }}"
+                    class="w-full btn-primary px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    aria-label="ابدأ الاختبار النفسي الآن"
+                >
+                    ابدأ الاختبار الآن
+                </a>
             </div>
           </nav>
         </div>

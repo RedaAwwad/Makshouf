@@ -112,7 +112,7 @@
                   تسجيل الدخول
                 </a>
                 <a
-                    href="{{ route('frontend.contact') }}"
+                    href="{{ route('frontend.contact.index') }}"
                     class="bg-[#1F1F1F] hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
                 >
                   تواصل معنا

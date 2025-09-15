@@ -154,73 +154,87 @@
               نموذج التواصل
             </h2>
 
+            @if(session('success'))
+                <div class="p-4 mb-4 text-sm text-gray-700 bg-gray-100 rounded-lg">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <form
               class="space-y-6"
               data-aos="fade-up"
               data-aos-duration="600"
               data-aos-delay="400"
+              method="POST"
+              action="{{ route('frontend.contact.store') }}"
             >
-              <div
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="500"
-              >
-                <input
-                  type="text"
-                  placeholder="الاسم الكامل"
-                  class="w-full px-4 py-3 border border-secondary rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all"
-                  required
-                />
-              </div>
+                @csrf
 
-              <div
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="600"
-              >
-                <input
-                  type="email"
-                  placeholder="البريد الإلكتروني"
-                  class="w-full px-4 py-3 border border-secondary rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all"
-                  required
-                />
-              </div>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="500"
+                >
+                    <input
+                    type="text"
+                    name="name"
+                    placeholder="الاسم الكامل"
+                    class="w-full px-4 py-3 border border-secondary rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all"
+                    required
+                    />
+                </div>
 
-              <div
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="700"
-              >
-                <input
-                  type="text"
-                  placeholder="الموضوع"
-                  class="w-full px-4 py-3 border border-secondary rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all"
-                  required
-                />
-              </div>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="600"
+                >
+                    <input
+                    type="email"
+                    name="email"
+                    placeholder="البريد الإلكتروني"
+                    class="w-full px-4 py-3 border border-secondary rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all"
+                    required
+                    />
+                </div>
 
-              <div
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="800"
-              >
-                <textarea
-                  placeholder="رسالتك........."
-                  rows="6"
-                  class="w-full px-4 py-3 border border-purple-200 rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300 transition-all resize-none"
-                  required
-                ></textarea>
-              </div>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="700"
+                >
+                    <input
+                    type="text"
+                    name="subject"
+                    placeholder="الموضوع"
+                    class="w-full px-4 py-3 border border-secondary rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all"
+                    required
+                    />
+                </div>
 
-              <button
-                type="submit"
-                class="bg-primary hover:bg-secondary text-black font-semibold py-3 px-6 rounded-full transition-colors duration-200"
-                data-aos="zoom-in"
-                data-aos-duration="600"
-                data-aos-delay="900"
-              >
-                إرسال الرسالة
-              </button>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="800"
+                >
+                    <textarea
+                    name="message"
+                    placeholder="رسالتك........."
+                    rows="6"
+                    class="w-full px-4 py-3 border border-purple-200 rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300 transition-all resize-none"
+                    required
+                    ></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="bg-primary hover:bg-secondary text-black font-semibold py-3 px-6 rounded-full transition-colors duration-200"
+                    data-aos="zoom-in"
+                    data-aos-duration="600"
+                    data-aos-delay="900"
+                >
+                    إرسال الرسالة
+                </button>
             </form>
           </div>
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\StripeWebhookController;
 use App\Http\Controllers\Frontend\TestController;
@@ -13,7 +14,6 @@ Route::name('frontend.')->group(function () {
     Route::view('/', 'frontend.pages.home')->name('home');
     Route::view('/faq', 'frontend.pages.faq')->name('faq');
     Route::view('/privacy-policy', 'frontend.pages.privacy-policy')->name('privacy-policy');
-    Route::view('/contact', 'frontend.pages.contact')->name('contact');
 
     // tests
     Route::name('tests.')->prefix('test')->middleware('auth')->group(function () {
@@ -27,6 +27,12 @@ Route::name('frontend.')->group(function () {
     Route::name('blog.')->prefix('blog')->group(function () {
         Route::get('/', [BlogController::class, 'index'])->name('index');
         Route::get('/post/{post}', [BlogController::class, 'post'])->name('post');
+    });
+
+    // blog
+    Route::name('contact.')->prefix('contact')->group(function () {
+        Route::get('/', [ContactController::class, 'index'])->name('index');
+        Route::post('/', [ContactController::class, 'store'])->name('store');
     });
 });
 
